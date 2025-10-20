@@ -72,30 +72,17 @@ onMounted(() => {
     const scrollProgress = currentScrollY / (document.body.scrollHeight - window.innerHeight)
     const time = Date.now() * 0.001
 
-    // Animate each object based on smooth scroll
-    objects.forEach((obj, index) => {
-      // Smooth rotation based on scroll and time
-      obj.rotation.x += 0.005 + scrollProgress * 0.002
-      obj.rotation.y += 0.008 + scrollProgress * 0.003
-      obj.rotation.z += 0.003
-
-      // Smooth position changes based on scroll
-      const scrollOffset = scrollProgress * 100
-      const targetY = Math.sin(scrollProgress * Math.PI * 4 + index) * 10 - scrollOffset * 0.3
-      const targetX = Math.cos(scrollProgress * Math.PI * 3 + index * 2) * 15
-      const targetZ = Math.sin(scrollProgress * Math.PI * 2 + index) * 5 - 10
+    // Minimal animation for single object
+    if (objects[0]) {
+      const obj = objects[0]
       
-      // Smooth position interpolation
-      obj.position.y = lerp(obj.position.y, targetY, 0.05)
-      obj.position.x = lerp(obj.position.x, targetX, 0.05)
-      obj.position.z = lerp(obj.position.z, targetZ, 0.05)
-
-      // Smooth scale pulse
-      const targetScale = 1 + Math.sin(time + index) * 0.15
-      const currentScale = obj.scale.x
-      const newScale = lerp(currentScale, targetScale, 0.1)
-      obj.scale.set(newScale, newScale, newScale)
-    })
+      // Simple rotation only
+      obj.rotation.x += 0.003
+      obj.rotation.y += 0.005
+      
+      // Gentle float down with scroll
+      obj.position.y = 5 - scrollProgress * 20
+    }
 
     // Smooth camera movement based on scroll
     const targetCameraY = -scrollProgress * 20
@@ -130,42 +117,25 @@ onMounted(() => {
 })
 
 function createFloatingObjects() {
-  const geometries = [
-    new THREE.TorusGeometry(3, 1, 16, 100),
-    new THREE.IcosahedronGeometry(3, 0),
-    new THREE.OctahedronGeometry(3, 0),
-    new THREE.TetrahedronGeometry(3, 0),
-    new THREE.TorusKnotGeometry(2, 0.8, 100, 16),
-    new THREE.DodecahedronGeometry(3, 0),
-  ]
-
-  const colors = [
-    0x6366f1, // Indigo
-    0x8b5cf6, // Purple
-    0x3b82f6, // Blue
-    0xa855f7, // Violet
-    0x06b6d4, // Cyan
-    0xec4899, // Pink
-  ]
-
-  geometries.forEach((geometry, index) => {
-    const material = new THREE.MeshBasicMaterial({
-      color: colors[index],
-      wireframe: true,
-      transparent: true,
-      opacity: 0.4,
-    })
-
-    const mesh = new THREE.Mesh(geometry, material)
-    
-    // Initial positions spread across the scene
-    mesh.position.x = (index % 3 - 1) * 20
-    mesh.position.y = Math.floor(index / 3) * 15 - 10
-    mesh.position.z = -10 - index * 2
-
-    scene.add(mesh)
-    objects.push(mesh)
+  // Ultra-lightweight: single low-poly object
+  const geometry = new THREE.OctahedronGeometry(3.5, 0) // 0 subdivisions = very light
+  
+  const material = new THREE.MeshBasicMaterial({
+    color: 0x6366f1,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.3,
   })
+
+  const mesh = new THREE.Mesh(geometry, material)
+  
+  // Position on right side, out of the way
+  mesh.position.x = 20
+  mesh.position.y = 5
+  mesh.position.z = -20
+
+  scene.add(mesh)
+  objects.push(mesh)
 }
 </script>
 

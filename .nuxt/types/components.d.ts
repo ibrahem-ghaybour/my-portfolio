@@ -1,0 +1,207 @@
+
+import type { DefineComponent, SlotsType } from 'vue'
+type IslandComponent<T> = DefineComponent<{}, {refresh: () => Promise<void>}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, SlotsType<{ fallback: { error: unknown } }>> & T
+
+type HydrationStrategies = {
+  hydrateOnVisible?: IntersectionObserverInit | true
+  hydrateOnIdle?: number | true
+  hydrateOnInteraction?: keyof HTMLElementEventMap | Array<keyof HTMLElementEventMap> | true
+  hydrateOnMediaQuery?: string
+  hydrateAfter?: number
+  hydrateWhen?: boolean
+  hydrateNever?: true
+}
+type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
+
+interface _GlobalComponents {
+  'AnimatedBorder': typeof import("../../app/components/AnimatedBorder.vue")['default']
+  'BackToTop': typeof import("../../app/components/BackToTop.vue")['default']
+  'Card3D': typeof import("../../app/components/Card3D.vue")['default']
+  'CursorTrail': typeof import("../../app/components/CursorTrail.vue")['default']
+  'CustomCursor': typeof import("../../app/components/CustomCursor.vue")['default']
+  'Floating3DObjects': typeof import("../../app/components/Floating3DObjects.vue")['default']
+  'FloatingBadge': typeof import("../../app/components/FloatingBadge.vue")['default']
+  'Footer': typeof import("../../app/components/Footer.vue")['default']
+  'GlowingParticles': typeof import("../../app/components/GlowingParticles.vue")['default']
+  'LoadingScreen': typeof import("../../app/components/LoadingScreen.vue")['default']
+  'Navigation': typeof import("../../app/components/Navigation.vue")['default']
+  'ProjectCarousel': typeof import("../../app/components/ProjectCarousel.vue")['default']
+  'ScrollProgress': typeof import("../../app/components/ScrollProgress.vue")['default']
+  'Section3DObject': typeof import("../../app/components/Section3DObject.vue")['default']
+  'SectionReveal': typeof import("../../app/components/SectionReveal.vue")['default']
+  'SpotlightEffect': typeof import("../../app/components/SpotlightEffect.vue")['default']
+  'TextReveal3D': typeof import("../../app/components/TextReveal3D.vue")['default']
+  'ThreeBackground': typeof import("../../app/components/ThreeBackground.vue")['default']
+  'SectionsAboutSection': typeof import("../../app/components/sections/AboutSection.vue")['default']
+  'SectionsContactSection': typeof import("../../app/components/sections/ContactSection.vue")['default']
+  'SectionsHeroSection': typeof import("../../app/components/sections/HeroSection.vue")['default']
+  'SectionsProjectsSection': typeof import("../../app/components/sections/ProjectsSection.vue")['default']
+  'SectionsSkillsSection': typeof import("../../app/components/sections/SkillsSection.vue")['default']
+  'SectionsTestimonialsSection': typeof import("../../app/components/sections/TestimonialsSection.vue")['default']
+  'NuxtWelcome': typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']
+  'NuxtLayout': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
+  'NuxtErrorBoundary': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
+  'ClientOnly': typeof import("../../node_modules/nuxt/dist/app/components/client-only")['default']
+  'DevOnly': typeof import("../../node_modules/nuxt/dist/app/components/dev-only")['default']
+  'ServerPlaceholder': typeof import("../../node_modules/nuxt/dist/app/components/server-placeholder")['default']
+  'NuxtLink': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-link")['default']
+  'NuxtLoadingIndicator': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']
+  'NuxtTime': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-time.vue")['default']
+  'NuxtRouteAnnouncer': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-route-announcer")['default']
+  'NuxtImg': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtImg']
+  'NuxtPicture': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtPicture']
+  'AspectRatio': typeof import("../../app/components/ui/aspect-ratio/index")['AspectRatio']
+  'Badge': typeof import("../../app/components/ui/badge/index")['Badge']
+  'Button': typeof import("../../app/components/ui/button/index")['Button']
+  'Card': typeof import("../../app/components/ui/card/index")['Card']
+  'CardAction': typeof import("../../app/components/ui/card/index")['CardAction']
+  'CardContent': typeof import("../../app/components/ui/card/index")['CardContent']
+  'CardDescription': typeof import("../../app/components/ui/card/index")['CardDescription']
+  'CardFooter': typeof import("../../app/components/ui/card/index")['CardFooter']
+  'CardHeader': typeof import("../../app/components/ui/card/index")['CardHeader']
+  'CardTitle': typeof import("../../app/components/ui/card/index")['CardTitle']
+  'Carousel': typeof import("../../app/components/ui/carousel/index")['Carousel']
+  'CarouselContent': typeof import("../../app/components/ui/carousel/index")['CarouselContent']
+  'CarouselItem': typeof import("../../app/components/ui/carousel/index")['CarouselItem']
+  'CarouselNext': typeof import("../../app/components/ui/carousel/index")['CarouselNext']
+  'CarouselPrevious': typeof import("../../app/components/ui/carousel/index")['CarouselPrevious']
+  'CarouselApi': typeof import("../../app/components/ui/carousel/index")['CarouselApi']
+  'Dialog': typeof import("../../app/components/ui/dialog/index")['Dialog']
+  'DialogClose': typeof import("../../app/components/ui/dialog/index")['DialogClose']
+  'DialogContent': typeof import("../../app/components/ui/dialog/index")['DialogContent']
+  'DialogDescription': typeof import("../../app/components/ui/dialog/index")['DialogDescription']
+  'DialogFooter': typeof import("../../app/components/ui/dialog/index")['DialogFooter']
+  'DialogHeader': typeof import("../../app/components/ui/dialog/index")['DialogHeader']
+  'DialogOverlay': typeof import("../../app/components/ui/dialog/index")['DialogOverlay']
+  'DialogScrollContent': typeof import("../../app/components/ui/dialog/index")['DialogScrollContent']
+  'DialogTitle': typeof import("../../app/components/ui/dialog/index")['DialogTitle']
+  'DialogTrigger': typeof import("../../app/components/ui/dialog/index")['DialogTrigger']
+  'DropdownMenu': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenu']
+  'DropdownMenuCheckboxItem': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuCheckboxItem']
+  'DropdownMenuContent': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuContent']
+  'DropdownMenuGroup': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuGroup']
+  'DropdownMenuItem': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuItem']
+  'DropdownMenuLabel': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuLabel']
+  'DropdownMenuRadioGroup': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuRadioGroup']
+  'DropdownMenuRadioItem': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuRadioItem']
+  'DropdownMenuSeparator': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuSeparator']
+  'DropdownMenuShortcut': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuShortcut']
+  'DropdownMenuSub': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuSub']
+  'DropdownMenuSubContent': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuSubContent']
+  'DropdownMenuSubTrigger': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuSubTrigger']
+  'DropdownMenuTrigger': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuTrigger']
+  'DropdownMenuPortal': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuPortal']
+  'Separator': typeof import("../../app/components/ui/separator/index")['Separator']
+  'NuxtLinkLocale': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']
+  'SwitchLocalePathLink': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']
+  'ColorScheme': typeof import("../../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
+  'NuxtPage': typeof import("../../node_modules/nuxt/dist/pages/runtime/page")['default']
+  'NoScript': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['NoScript']
+  'Link': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Link']
+  'Base': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Base']
+  'Title': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Title']
+  'Meta': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Meta']
+  'Style': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Style']
+  'Head': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Head']
+  'Html': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Html']
+  'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']
+  'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
+  'LazyAnimatedBorder': LazyComponent<typeof import("../../app/components/AnimatedBorder.vue")['default']>
+  'LazyBackToTop': LazyComponent<typeof import("../../app/components/BackToTop.vue")['default']>
+  'LazyCard3D': LazyComponent<typeof import("../../app/components/Card3D.vue")['default']>
+  'LazyCursorTrail': LazyComponent<typeof import("../../app/components/CursorTrail.vue")['default']>
+  'LazyCustomCursor': LazyComponent<typeof import("../../app/components/CustomCursor.vue")['default']>
+  'LazyFloating3DObjects': LazyComponent<typeof import("../../app/components/Floating3DObjects.vue")['default']>
+  'LazyFloatingBadge': LazyComponent<typeof import("../../app/components/FloatingBadge.vue")['default']>
+  'LazyFooter': LazyComponent<typeof import("../../app/components/Footer.vue")['default']>
+  'LazyGlowingParticles': LazyComponent<typeof import("../../app/components/GlowingParticles.vue")['default']>
+  'LazyLoadingScreen': LazyComponent<typeof import("../../app/components/LoadingScreen.vue")['default']>
+  'LazyNavigation': LazyComponent<typeof import("../../app/components/Navigation.vue")['default']>
+  'LazyProjectCarousel': LazyComponent<typeof import("../../app/components/ProjectCarousel.vue")['default']>
+  'LazyScrollProgress': LazyComponent<typeof import("../../app/components/ScrollProgress.vue")['default']>
+  'LazySection3DObject': LazyComponent<typeof import("../../app/components/Section3DObject.vue")['default']>
+  'LazySectionReveal': LazyComponent<typeof import("../../app/components/SectionReveal.vue")['default']>
+  'LazySpotlightEffect': LazyComponent<typeof import("../../app/components/SpotlightEffect.vue")['default']>
+  'LazyTextReveal3D': LazyComponent<typeof import("../../app/components/TextReveal3D.vue")['default']>
+  'LazyThreeBackground': LazyComponent<typeof import("../../app/components/ThreeBackground.vue")['default']>
+  'LazySectionsAboutSection': LazyComponent<typeof import("../../app/components/sections/AboutSection.vue")['default']>
+  'LazySectionsContactSection': LazyComponent<typeof import("../../app/components/sections/ContactSection.vue")['default']>
+  'LazySectionsHeroSection': LazyComponent<typeof import("../../app/components/sections/HeroSection.vue")['default']>
+  'LazySectionsProjectsSection': LazyComponent<typeof import("../../app/components/sections/ProjectsSection.vue")['default']>
+  'LazySectionsSkillsSection': LazyComponent<typeof import("../../app/components/sections/SkillsSection.vue")['default']>
+  'LazySectionsTestimonialsSection': LazyComponent<typeof import("../../app/components/sections/TestimonialsSection.vue")['default']>
+  'LazyNuxtWelcome': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
+  'LazyNuxtLayout': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
+  'LazyNuxtErrorBoundary': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>
+  'LazyClientOnly': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/client-only")['default']>
+  'LazyDevOnly': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/dev-only")['default']>
+  'LazyServerPlaceholder': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
+  'LazyNuxtLink': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-link")['default']>
+  'LazyNuxtLoadingIndicator': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']>
+  'LazyNuxtTime': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-time.vue")['default']>
+  'LazyNuxtRouteAnnouncer': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-route-announcer")['default']>
+  'LazyNuxtImg': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtImg']>
+  'LazyNuxtPicture': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtPicture']>
+  'LazyAspectRatio': LazyComponent<typeof import("../../app/components/ui/aspect-ratio/index")['AspectRatio']>
+  'LazyBadge': LazyComponent<typeof import("../../app/components/ui/badge/index")['Badge']>
+  'LazyButton': LazyComponent<typeof import("../../app/components/ui/button/index")['Button']>
+  'LazyCard': LazyComponent<typeof import("../../app/components/ui/card/index")['Card']>
+  'LazyCardAction': LazyComponent<typeof import("../../app/components/ui/card/index")['CardAction']>
+  'LazyCardContent': LazyComponent<typeof import("../../app/components/ui/card/index")['CardContent']>
+  'LazyCardDescription': LazyComponent<typeof import("../../app/components/ui/card/index")['CardDescription']>
+  'LazyCardFooter': LazyComponent<typeof import("../../app/components/ui/card/index")['CardFooter']>
+  'LazyCardHeader': LazyComponent<typeof import("../../app/components/ui/card/index")['CardHeader']>
+  'LazyCardTitle': LazyComponent<typeof import("../../app/components/ui/card/index")['CardTitle']>
+  'LazyCarousel': LazyComponent<typeof import("../../app/components/ui/carousel/index")['Carousel']>
+  'LazyCarouselContent': LazyComponent<typeof import("../../app/components/ui/carousel/index")['CarouselContent']>
+  'LazyCarouselItem': LazyComponent<typeof import("../../app/components/ui/carousel/index")['CarouselItem']>
+  'LazyCarouselNext': LazyComponent<typeof import("../../app/components/ui/carousel/index")['CarouselNext']>
+  'LazyCarouselPrevious': LazyComponent<typeof import("../../app/components/ui/carousel/index")['CarouselPrevious']>
+  'LazyCarouselApi': LazyComponent<typeof import("../../app/components/ui/carousel/index")['CarouselApi']>
+  'LazyDialog': LazyComponent<typeof import("../../app/components/ui/dialog/index")['Dialog']>
+  'LazyDialogClose': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogClose']>
+  'LazyDialogContent': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogContent']>
+  'LazyDialogDescription': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogDescription']>
+  'LazyDialogFooter': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogFooter']>
+  'LazyDialogHeader': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogHeader']>
+  'LazyDialogOverlay': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogOverlay']>
+  'LazyDialogScrollContent': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogScrollContent']>
+  'LazyDialogTitle': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogTitle']>
+  'LazyDialogTrigger': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogTrigger']>
+  'LazyDropdownMenu': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenu']>
+  'LazyDropdownMenuCheckboxItem': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuCheckboxItem']>
+  'LazyDropdownMenuContent': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuContent']>
+  'LazyDropdownMenuGroup': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuGroup']>
+  'LazyDropdownMenuItem': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuItem']>
+  'LazyDropdownMenuLabel': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuLabel']>
+  'LazyDropdownMenuRadioGroup': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuRadioGroup']>
+  'LazyDropdownMenuRadioItem': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuRadioItem']>
+  'LazyDropdownMenuSeparator': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuSeparator']>
+  'LazyDropdownMenuShortcut': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuShortcut']>
+  'LazyDropdownMenuSub': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuSub']>
+  'LazyDropdownMenuSubContent': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuSubContent']>
+  'LazyDropdownMenuSubTrigger': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuSubTrigger']>
+  'LazyDropdownMenuTrigger': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuTrigger']>
+  'LazyDropdownMenuPortal': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuPortal']>
+  'LazySeparator': LazyComponent<typeof import("../../app/components/ui/separator/index")['Separator']>
+  'LazyNuxtLinkLocale': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']>
+  'LazySwitchLocalePathLink': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']>
+  'LazyColorScheme': LazyComponent<typeof import("../../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']>
+  'LazyNuxtPage': LazyComponent<typeof import("../../node_modules/nuxt/dist/pages/runtime/page")['default']>
+  'LazyNoScript': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['NoScript']>
+  'LazyLink': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Link']>
+  'LazyBase': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Base']>
+  'LazyTitle': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Title']>
+  'LazyMeta': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Meta']>
+  'LazyStyle': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Style']>
+  'LazyHead': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Head']>
+  'LazyHtml': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Html']>
+  'LazyBody': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']>
+  'LazyNuxtIsland': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']>
+}
+
+declare module 'vue' {
+  export interface GlobalComponents extends _GlobalComponents { }
+}
+
+export {}

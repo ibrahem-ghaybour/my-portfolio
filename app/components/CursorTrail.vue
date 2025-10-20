@@ -1,5 +1,5 @@
 <template>
-  <div class="pointer-events-none fixed inset-0 z-[60]">
+  <div class="pointer-events-none fixed inset-0 z-[5]">
     <div
       v-for="(particle, index) in particles"
       :key="index"

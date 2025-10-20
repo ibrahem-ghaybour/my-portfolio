@@ -2,12 +2,12 @@
   <div>
     <LoadingScreen />
     <ScrollProgress /> 
-    <SpotlightEffect />
-    <GlowingParticles />
-    <CustomCursor />
-    <CursorTrail />
+    <!-- <SpotlightEffect /> -->
+    <!-- <GlowingParticles /> -->
+    <!-- <CustomCursor /> -->
+    <!-- <CursorTrail /> -->
     <Floating3DObjects />
-    <Navigation />
+    <Navigation class="z-50" />
     <main class="min-h-screen w-full relative z-20">
       <NuxtPage />
     </main>
@@ -21,16 +21,17 @@ import { onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Floating3DObjects from '~/components/Floating3DObjects.vue'
 import LoadingScreen from '~/components/LoadingScreen.vue'
+import ScrollProgress from '~/components/ScrollProgress.vue'
 import SpotlightEffect from '~/components/SpotlightEffect.vue'
 import GlowingParticles from '~/components/GlowingParticles.vue'
 
 const { locale } = useI18n()
 
 onMounted(() => {
-  // Hide default cursor on desktop only
-  if (window.matchMedia('(pointer: fine)').matches) {
-    document.body.style.cursor = 'none'
-  }
+  // Show default cursor for better usability
+  // if (window.matchMedia('(pointer: fine)').matches) {
+  //   document.body.style.cursor = 'none'
+  // }
   
   // Add smooth scroll behavior
   document.documentElement.style.scrollBehavior = 'smooth'

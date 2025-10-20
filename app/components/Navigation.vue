@@ -1,180 +1,117 @@
 <template>
-  <nav 
-    ref="navRef" 
-    class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b transition-all duration-300"
-    :class="{ 'shadow-lg py-2': isScrolled, 'py-0': !isScrolled }"
-  >
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
-      <div class="flex items-center justify-between">
-        <!-- Logo -->
-        <div class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+  <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
+    <div class="container flex h-16 items-center justify-between px-4">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-purple-600">
+          <span class="text-white font-bold text-lg">{{ locale === 'ar' ? 'م' : 'P' }}</span>
+        </div>
+        <span class="text-xl font-bold bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent">
           {{ locale === 'ar' ? 'محفظتي' : 'Portfolio' }}
-        </div>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            v-for="item in navItems"
-            :key="item.key"
-            :href="`#${item.key}`"
-            class="nav-link text-foreground/80 hover:text-foreground transition-colors duration-300"
-            @click.prevent="scrollToSection(item.key)"
-          >
-            {{ t(`nav.${item.key}`) }}
-          </a>
-        </div>
-
-        <!-- Actions -->
-        <div class="flex items-center gap-2 sm:gap-4">
-          <!-- Theme Switcher -->
-          <DropdownMenu>
-            <DropdownMenuTrigger as-child>
-              <Button variant="outline" size="icon">
-                <Sun v-if="colorMode === 'light'" class="h-5 w-5" />
-                <Moon v-else-if="colorMode === 'dark'" class="h-5 w-5" />
-                <Monitor v-else class="h-5 w-5" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem @click="setColorMode('light')">
-                <Sun class="h-4 w-4 mr-2" />
-                {{ t('theme.light') }}
-              </DropdownMenuItem>
-              <DropdownMenuItem @click="setColorMode('dark')">
-                <Moon class="h-4 w-4 mr-2" />
-                {{ t('theme.dark') }}
-              </DropdownMenuItem>
-              <DropdownMenuItem @click="setColorMode('auto')">
-                <Monitor class="h-4 w-4 mr-2" />
-                {{ t('theme.system') }}
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <!-- Language Switcher -->
-          <DropdownMenu>
-            <DropdownMenuTrigger as-child>
-              <Button variant="outline" size="icon">
-                <Languages class="h-5 w-5" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem @click="setLocale('en')">
-                English
-              </DropdownMenuItem>
-              <DropdownMenuItem @click="setLocale('ar')">
-                العربية
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <!-- Mobile Menu Toggle -->
-          <Button
-            variant="outline"
-            size="icon"
-            class="md:hidden"
-            @click="mobileMenuOpen = !mobileMenuOpen"
-          >
-            <Menu v-if="!mobileMenuOpen" class="h-5 w-5" />
-            <X v-else class="h-5 w-5" />
-          </Button>
-        </div>
+        </span>
       </div>
 
-      <!-- Mobile Menu -->
-      <div
-        v-if="mobileMenuOpen"
-        class="md:hidden mt-4 pb-4 flex flex-col gap-4"
-      >
-        <a
-          v-for="item in navItems"
-          :key="item.key"
-          :href="`#${item.key}`"
-          class="text-foreground/80 hover:text-foreground transition-colors duration-300"
-          @click.prevent="scrollToSection(item.key); mobileMenuOpen = false"
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-1">
+        <a 
+          v-for="item in navItems" 
+          :key="item"
+          :href="`#${item}`" 
+          class="px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent rounded-md relative group"
         >
-          {{ t(`nav.${item.key}`) }}
+          {{ item.charAt(0).toUpperCase() + item.slice(1) }}
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
         </a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-2">
+        <!-- Theme Toggle -->
+        <Button 
+          variant="outline" 
+          size="icon" 
+          @click="toggleTheme"
+          class="relative overflow-hidden transition-all hover:scale-105"
+        >
+          <Sun v-if="isDark" class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+          <Moon v-else class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+        </Button>
+
+        <!-- Language Toggle -->
+        <Button 
+          variant="outline" 
+          size="sm" 
+          @click="toggleLanguage"
+          class="gap-2 transition-all hover:scale-105"
+        >
+          <Languages class="h-4 w-4" />
+          <span class="text-xs font-semibold">{{ currentLang }}</span>
+        </Button>
+
+        <!-- Mobile Menu Toggle -->
+        <Button 
+          variant="outline" 
+          size="icon" 
+          class="md:hidden transition-all hover:scale-105" 
+          @click="mobileMenuOpen = !mobileMenuOpen"
+        >
+          <Menu v-if="!mobileMenuOpen" class="h-5 w-5" />
+          <X v-else class="h-5 w-5" />
+        </Button>
       </div>
     </div>
-  </nav>
+    
+    <!-- Mobile Menu Dropdown -->
+    <Transition
+      enter-active-class="transition-all duration-200 ease-out"
+      enter-from-class="opacity-0 -translate-y-2"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition-all duration-150 ease-in"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-2"
+    >
+      <div v-if="mobileMenuOpen" class="md:hidden border-t border-border/40 bg-background/95 backdrop-blur">
+        <div class="container py-4 flex flex-col gap-2 px-4">
+          <a 
+            v-for="item in navItems" 
+            :key="item"
+            :href="`#${item}`"
+            @click="mobileMenuOpen = false"
+            class="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-all"
+          >
+            {{ item.charAt(0).toUpperCase() + item.slice(1) }}
+          </a>
+        </div>
+      </div>
+    </Transition>
+  </header>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { ref, computed } from 'vue'
 import { useColorMode } from '@vueuse/core'
-import { gsap } from 'gsap'
-import { Sun, Moon, Monitor, Languages, Menu, X } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
+import { Sun, Moon, Languages, Menu, X } from 'lucide-vue-next'
 import { Button } from '~/components/ui/button'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '~/components/ui/dropdown-menu'
 
-const { t, locale } = useI18n()
 const colorMode = useColorMode()
-const navRef = ref<HTMLElement | null>(null)
+const { locale } = useI18n()
 const mobileMenuOpen = ref(false)
-const isScrolled = ref(false)
 
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50
+const navItems = ['home', 'about', 'skills', 'projects', 'contact']
+
+const isDark = computed(() => colorMode.value === 'dark')
+const currentLang = computed(() => locale.value === 'ar' ? 'EN' : 'AR')
+
+const toggleTheme = () => {
+  colorMode.value = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 
-const navItems = [
-  { key: 'home' },
-  { key: 'about' },
-  { key: 'skills' },
-  { key: 'projects' },
-  { key: 'contact' },
-]
-
-const setColorMode = (mode: 'light' | 'dark' | 'auto') => {
-  colorMode.value = mode
-}
-
-const setLocale = (newLocale: string) => {
+const toggleLanguage = () => {
+  const newLocale = locale.value === 'en' ? 'ar' : 'en'
   locale.value = newLocale
   document.documentElement.dir = newLocale === 'ar' ? 'rtl' : 'ltr'
 }
-
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    const offset = 80
-    const elementPosition = element.getBoundingClientRect().top
-    const offsetPosition = elementPosition + window.pageYOffset - offset
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    })
-  }
-}
-
-onMounted(() => {
-  // Set initial direction
-  document.documentElement.dir = locale.value === 'ar' ? 'rtl' : 'ltr'
-
-  // Animate navigation on mount
-  gsap.from(navRef.value, {
-    y: -100,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
-  })
-
-  // Add scroll listener
-  window.addEventListener('scroll', handleScroll, { passive: true })
-  handleScroll()
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
 </script>
 
 <style scoped>
