@@ -1,0 +1,65 @@
+{
+   "nav": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+      },
+      "hero": {
+        "greeting": "Hi, I'm",
+        "title": "Front-End Web Developer",
+        "subtitle": "I build modern, responsive, and user-friendly web applications",
+        "cta": "View My Work",
+        "contact": "Get In Touch"
+      },
+      "about": {
+        "title": "About Me",
+        "description": "Passionate Front-End Developer with 2+ years of experience building modern, responsive, and user-friendly web applications. Specialized in Vue.js, Nuxt.js, and Tailwind CSS, with strong knowledge in performance optimization, accessibility, and SEO. Basic experience with NestJS and Mongoose enables me to contribute to full-stack applications. Skilled at collaborating with cross-functional teams and delivering high-quality projects. Currently seeking opportunities to contribute to innovative products and grow within the web development industry.",
+        "experience": "Years Experience",
+        "projects": "Projects Completed",
+        "clients": "Happy Clients",
+        "workExperience": "Work Experience",
+        "genwin": "Front-End Web Developer at Genwin (2024 - April)",
+        "genwinDesc": "Designed and developed responsive web applications using Vue.js, Nuxt.js, JavaScript, and Tailwind CSS. Implemented UI/UX designs to improve user experience and reduce bounce rates by 30%. Collaborated with back-end developers and designers to ensure smooth integration of APIs and features.",
+        "freelance": "Freelance Projects (2025 - June)",
+        "freelanceDesc": "Built complete e-commerce platforms, user management dashboards, and custom web applications. Focused on performance, user experience, and mobile-first design with full SEO optimization and accessibility best practices."
+      },
+      "skills": {
+        "title": "My Skills",
+        "subtitle": "Technologies I work with",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "tools": "Tools & Others"
+      },
+      "projects": {
+        "title": "Featured Projects",
+        "subtitle": "Some of my recent work",
+        "viewProject": "View Project",
+        "viewCode": "View Code"
+      },
+      "contact": {
+        "title": "Get In Touch",
+        "subtitle": "Let's work together",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send Message",
+        "sending": "Sending...",
+        "success": "Message sent successfully!",
+        "error": "Failed to send message. Please try again."
+      },
+      "footer": {
+        "rights": "All rights reserved",
+        "built": "Built with"
+      },
+      "theme": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      },
+      "testimonials": {
+        "title": "Client Testimonials",
+        "subtitle": "What people say about my work"
+      }
+}
