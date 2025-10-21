@@ -22,22 +22,19 @@
       </div>
 
       <div class="max-w-6xl mx-auto">
-        <ClientOnly>
-          <Swiper
-            :modules="[Navigation, Pagination, Autoplay]"
-            :slides-per-view="1"
-            :space-between="30"
-            :navigation="true"
-            :pagination="{ clickable: true }"
-            :autoplay="{ delay: 5000, disableOnInteraction: false }"
-            :breakpoints="{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 }
-            }"
-            class="testimonials-swiper pb-12"
-          >
-            <SwiperSlide v-for="testimonial in testimonials" :key="testimonial.id">
+        <Carousel
+          class="w-full"
+          :opts="{
+            align: 'start',
+            loop: true,
+          }"
+        >
+          <CarouselContent class="-ml-4">
+            <CarouselItem 
+              v-for="testimonial in testimonials" 
+              :key="testimonial.id"
+              class="pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+            >
               <Card class="h-full hover:shadow-2xl transition-all duration-500 group">
                 <CardContent class="pt-6">
                   <div class="flex flex-col items-center text-center space-y-4">
@@ -78,14 +75,11 @@
                   </div>
                 </CardContent>
               </Card>
-            </SwiperSlide>
-          </Swiper>
-          <template #fallback>
-            <div class="text-center py-8">
-              <p class="text-muted-foreground">Loading testimonials...</p>
-            </div>
-          </template>
-        </ClientOnly>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious class="-left-12" />
+          <CarouselNext class="-right-12" />
+        </Carousel>
       </div>
     </div>
   </section>
@@ -93,12 +87,14 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
 import { Card, CardContent } from '~/components/ui/card'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '~/components/ui/carousel'
 import Section3DObject from '~/components/Section3DObject.vue'
 
 const { t } = useI18n()
@@ -187,33 +183,3 @@ const testimonials = [
 ]
 </script>
 
-<style scoped>
-.testimonials-swiper :deep(.swiper-button-next),
-.testimonials-swiper :deep(.swiper-button-prev) {
-  color: hsl(var(--primary));
-  background: hsl(var(--background));
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-}
-
-.testimonials-swiper :deep(.swiper-button-next):after,
-.testimonials-swiper :deep(.swiper-button-prev):after {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.testimonials-swiper :deep(.swiper-pagination-bullet) {
-  background: hsl(var(--primary));
-  opacity: 0.5;
-  width: 10px;
-  height: 10px;
-}
-
-.testimonials-swiper :deep(.swiper-pagination-bullet-active) {
-  opacity: 1;
-  width: 30px;
-  border-radius: 5px;
-}
-</style>
