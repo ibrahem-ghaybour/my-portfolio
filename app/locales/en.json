@@ -36,7 +36,46 @@
         "title": "Featured Projects",
         "subtitle": "Some of my recent work",
         "viewProject": "View Project",
-        "viewCode": "View Code"
+        "viewCode": "View Code",
+        "viewGallery": "View Gallery",
+        "items": {
+          "curva": {
+            "title": "Curva Egypt - E-commerce Website",
+            "description": "Complete e-commerce platform with multi-language support, dark/light themes, full SEO optimization, and dynamic product display."
+          },
+          "userManagement": {
+            "title": "User Management Dashboard",
+            "description": "Role-based user management system with authentication, CRUD operations, pagination, filtering, and theme switching."
+          },
+          "dashboard": {
+            "title": "Dashboard Application",
+            "description": "Modern dashboard application with data visualization, analytics, and interactive components."
+          },
+          "whatsapp": {
+            "title": "WhatsApp Clone",
+            "description": "Real-time messaging application similar to WhatsApp Web with voice message recording, Firebase authentication, and instant messaging features."
+          },
+          "deliver": {
+            "title": "Deliver - Delivery Application",
+            "description": "Complete delivery application built with vanilla TypeScript, component-based architecture, JSON data handling, and GSAP animations. No frameworks used - pure HTML, SCSS, Bootstrap, and TypeScript."
+          },
+          "genwin": {
+            "title": "Genwin Web Applications",
+            "description": "Responsive web applications with improved UI/UX, API integration, and cross-browser compatibility."
+          },
+          "portfolio": {
+            "title": "Portfolio Website",
+            "description": "Modern portfolio with 3D effects, smooth animations, bilingual support, and stunning visual effects."
+          },
+          "freelance": {
+            "title": "Freelance Projects",
+            "description": "Various client projects including landing pages, dashboards, and custom web applications."
+          },
+          "opensource": {
+            "title": "Open Source Contributions",
+            "description": "Contributing to Vue.js ecosystem and building reusable components for the community."
+          }
+        }
       },
       "contact": {
         "title": "Get In Touch",

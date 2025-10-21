@@ -66,16 +66,6 @@ interface _GlobalComponents {
   'CarouselNext': typeof import("../../app/components/ui/carousel/index")['CarouselNext']
   'CarouselPrevious': typeof import("../../app/components/ui/carousel/index")['CarouselPrevious']
   'CarouselApi': typeof import("../../app/components/ui/carousel/index")['CarouselApi']
-  'Dialog': typeof import("../../app/components/ui/dialog/index")['Dialog']
-  'DialogClose': typeof import("../../app/components/ui/dialog/index")['DialogClose']
-  'DialogContent': typeof import("../../app/components/ui/dialog/index")['DialogContent']
-  'DialogDescription': typeof import("../../app/components/ui/dialog/index")['DialogDescription']
-  'DialogFooter': typeof import("../../app/components/ui/dialog/index")['DialogFooter']
-  'DialogHeader': typeof import("../../app/components/ui/dialog/index")['DialogHeader']
-  'DialogOverlay': typeof import("../../app/components/ui/dialog/index")['DialogOverlay']
-  'DialogScrollContent': typeof import("../../app/components/ui/dialog/index")['DialogScrollContent']
-  'DialogTitle': typeof import("../../app/components/ui/dialog/index")['DialogTitle']
-  'DialogTrigger': typeof import("../../app/components/ui/dialog/index")['DialogTrigger']
   'DropdownMenu': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenu']
   'DropdownMenuCheckboxItem': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuCheckboxItem']
   'DropdownMenuContent': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuContent']
@@ -91,6 +81,16 @@ interface _GlobalComponents {
   'DropdownMenuSubTrigger': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuSubTrigger']
   'DropdownMenuTrigger': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuTrigger']
   'DropdownMenuPortal': typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuPortal']
+  'Dialog': typeof import("../../app/components/ui/dialog/index")['Dialog']
+  'DialogClose': typeof import("../../app/components/ui/dialog/index")['DialogClose']
+  'DialogContent': typeof import("../../app/components/ui/dialog/index")['DialogContent']
+  'DialogDescription': typeof import("../../app/components/ui/dialog/index")['DialogDescription']
+  'DialogFooter': typeof import("../../app/components/ui/dialog/index")['DialogFooter']
+  'DialogHeader': typeof import("../../app/components/ui/dialog/index")['DialogHeader']
+  'DialogOverlay': typeof import("../../app/components/ui/dialog/index")['DialogOverlay']
+  'DialogScrollContent': typeof import("../../app/components/ui/dialog/index")['DialogScrollContent']
+  'DialogTitle': typeof import("../../app/components/ui/dialog/index")['DialogTitle']
+  'DialogTrigger': typeof import("../../app/components/ui/dialog/index")['DialogTrigger']
   'Separator': typeof import("../../app/components/ui/separator/index")['Separator']
   'NuxtLinkLocale': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']
   'SwitchLocalePathLink': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']
@@ -158,16 +158,6 @@ interface _GlobalComponents {
   'LazyCarouselNext': LazyComponent<typeof import("../../app/components/ui/carousel/index")['CarouselNext']>
   'LazyCarouselPrevious': LazyComponent<typeof import("../../app/components/ui/carousel/index")['CarouselPrevious']>
   'LazyCarouselApi': LazyComponent<typeof import("../../app/components/ui/carousel/index")['CarouselApi']>
-  'LazyDialog': LazyComponent<typeof import("../../app/components/ui/dialog/index")['Dialog']>
-  'LazyDialogClose': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogClose']>
-  'LazyDialogContent': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogContent']>
-  'LazyDialogDescription': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogDescription']>
-  'LazyDialogFooter': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogFooter']>
-  'LazyDialogHeader': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogHeader']>
-  'LazyDialogOverlay': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogOverlay']>
-  'LazyDialogScrollContent': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogScrollContent']>
-  'LazyDialogTitle': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogTitle']>
-  'LazyDialogTrigger': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogTrigger']>
   'LazyDropdownMenu': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenu']>
   'LazyDropdownMenuCheckboxItem': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuCheckboxItem']>
   'LazyDropdownMenuContent': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuContent']>
@@ -183,6 +173,16 @@ interface _GlobalComponents {
   'LazyDropdownMenuSubTrigger': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuSubTrigger']>
   'LazyDropdownMenuTrigger': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuTrigger']>
   'LazyDropdownMenuPortal': LazyComponent<typeof import("../../app/components/ui/dropdown-menu/index")['DropdownMenuPortal']>
+  'LazyDialog': LazyComponent<typeof import("../../app/components/ui/dialog/index")['Dialog']>
+  'LazyDialogClose': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogClose']>
+  'LazyDialogContent': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogContent']>
+  'LazyDialogDescription': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogDescription']>
+  'LazyDialogFooter': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogFooter']>
+  'LazyDialogHeader': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogHeader']>
+  'LazyDialogOverlay': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogOverlay']>
+  'LazyDialogScrollContent': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogScrollContent']>
+  'LazyDialogTitle': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogTitle']>
+  'LazyDialogTrigger': LazyComponent<typeof import("../../app/components/ui/dialog/index")['DialogTrigger']>
   'LazySeparator': LazyComponent<typeof import("../../app/components/ui/separator/index")['Separator']>
   'LazyNuxtLinkLocale': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']>
   'LazySwitchLocalePathLink': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']>

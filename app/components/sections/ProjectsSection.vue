@@ -42,15 +42,15 @@
                 </Button>
                 <Button v-if="project.images" size="sm" variant="secondary" @click="openProjectModal(project)">
                   <ImageIcon class="w-4 h-4 mr-2" />
-                  View Gallery
+                  {{ t('projects.viewGallery') }}
                 </Button>
               </div>
             </div>
 
             <!-- Project Content -->
             <CardHeader>
-              <CardTitle>{{ project.title }}</CardTitle>
-              <CardDescription>{{ project.description }}</CardDescription>
+              <CardTitle>{{ t(`projects.items.${project.key}.title`) }}</CardTitle>
+              <CardDescription>{{ t(`projects.items.${project.key}.description`) }}</CardDescription>
             </CardHeader>
 
             <CardContent>
@@ -69,18 +69,17 @@
       </div>
     </div>
 
-    <!-- Project Gallery Modal -->
     <Dialog v-model:open="isModalOpen">
       <DialogContent class="max-w-4xl">
         <DialogHeader>
-          <DialogTitle>{{ selectedProject?.title }}</DialogTitle>
-          <DialogDescription>{{ selectedProject?.description }}</DialogDescription>
+          <DialogTitle>{{ selectedProject ? t(`projects.items.${selectedProject.key}.title`) : '' }}</DialogTitle>
+          <DialogDescription>{{ selectedProject ? t(`projects.items.${selectedProject.key}.description`) : '' }}</DialogDescription>
         </DialogHeader>
         <div class="mt-4">
           <ProjectCarousel 
             v-if="selectedProject?.images" 
             :images="selectedProject.images" 
-            :project-name="selectedProject.title"
+            :project-name="t(`projects.items.${selectedProject.key}.title`)"
           />
         </div>
       </DialogContent>
@@ -123,8 +122,7 @@ const selectedProject = ref<any>(null)
 const projects = [
   {
     id: 1,
-    title: 'Curva Egypt - E-commerce Website',
-    description: 'Complete e-commerce platform with multi-language support, dark/light themes, full SEO optimization, and dynamic product display.',
+    key: 'curva',
     technologies: ['Vue.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS'],
     icon: ShoppingCart,
     link: 'https://curvaegypt.com',
@@ -137,16 +135,14 @@ const projects = [
   },
   {
     id: 2,
-    title: 'User Management Dashboard',
-    description: 'Role-based user management system with authentication, CRUD operations, pagination, filtering, and theme switching.',
+    key: 'userManagement',
     technologies: ['Vue 3', 'Nuxt', 'Pinia', 'i18n'],
     icon: Briefcase,
     link: 'https://github.com/ibrahem-ghaybour/user-management-dashboard-vue-3-assessment'
   },
   {
     id: 3,
-    title: 'Dashboard Application',
-    description: 'Modern dashboard application with data visualization, analytics, and interactive components.',
+    key: 'dashboard',
     technologies: ['Vue.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS'],
     icon: LayoutDashboard,
     link: 'https://github.com/ibrahem-ghaybour/my-dashpoard-app',
@@ -156,45 +152,39 @@ const projects = [
   },
   {
     id: 4,
-    title: 'WhatsApp Clone',
-    description: 'Real-time messaging application similar to WhatsApp Web with voice message recording, Firebase authentication, and instant messaging features.',
+    key: 'whatsapp',
     technologies: ['Vue.js', 'Firebase', 'JavaScript', 'CSS'],
     icon: MessageCircle,
     link: 'https://ibrahem-ghaybour.github.io/whatsapp-ghaybour/'
   },
   {
     id: 5,
-    title: 'Deliver - Delivery Application',
-    description: 'Complete delivery application built with vanilla TypeScript, component-based architecture, JSON data handling, and GSAP animations. No frameworks used - pure HTML, SCSS, Bootstrap, and TypeScript.',
+    key: 'deliver',
     technologies: ['TypeScript', 'HTML', 'SCSS', 'Bootstrap', 'GSAP'],
     icon: Package,
     link: 'https://ibrahem-ghaybour.github.io/deliver/'
   },
   {
     id: 6,
-    title: 'Genwin Web Applications',
-    description: 'Responsive web applications with improved UI/UX, API integration, and cross-browser compatibility.',
+    key: 'genwin',
     technologies: ['Vue.js', 'Nuxt.js', 'JavaScript', 'Tailwind CSS'],
     icon: Zap
   },
   {
     id: 7,
-    title: 'Portfolio Website',
-    description: 'Modern portfolio with 3D effects, smooth animations, bilingual support, and stunning visual effects.',
+    key: 'portfolio',
     technologies: ['Nuxt 3', 'Three.js', 'GSAP', 'Tailwind CSS'],
     icon: BookOpen
   },
   {
     id: 8,
-    title: 'Freelance Projects',
-    description: 'Various client projects including landing pages, dashboards, and custom web applications.',
+    key: 'freelance',
     technologies: ['Vue.js', 'Nuxt.js', 'Tailwind CSS', 'REST APIs'],
     icon: MessageSquare
   },
   {
     id: 9,
-    title: 'Open Source Contributions',
-    description: 'Contributing to Vue.js ecosystem and building reusable components for the community.',
+    key: 'opensource',
     technologies: ['Vue 3', 'TypeScript', 'Vite', 'Vitest'],
     icon: Calendar
   }

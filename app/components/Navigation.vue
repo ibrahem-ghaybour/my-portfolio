@@ -19,7 +19,7 @@
           :href="`#${item}`" 
           class="px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent rounded-md relative group"
         >
-          {{ item.charAt(0).toUpperCase() + item.slice(1) }}
+          {{ t(`nav.${item}`) }}
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
         </a>
       </nav>
@@ -79,7 +79,7 @@
             @click="mobileMenuOpen = false"
             class="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-all"
           >
-            {{ item.charAt(0).toUpperCase() + item.slice(1) }}
+            {{ t(`nav.${item}`) }}
           </a>
         </div>
       </div>
@@ -95,7 +95,7 @@ import { Sun, Moon, Languages, Menu, X } from 'lucide-vue-next'
 import { Button } from '~/components/ui/button'
 
 const colorMode = useColorMode()
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const mobileMenuOpen = ref(false)
 
 const navItems = ['home', 'about', 'skills', 'projects', 'contact']
