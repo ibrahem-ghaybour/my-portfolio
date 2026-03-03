@@ -1,41 +1,41 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, setCookie, removeResponseHeader, createError, getRouterParam, getQuery as getQuery$1, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getResponseStatusText } from 'file:///media/ibrahim/D/my-portfolio/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, setCookie, removeResponseHeader, createError, getRouterParam, getQuery as getQuery$1, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getResponseStatusText } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
-import { escapeHtml } from 'file:///media/ibrahim/D/my-portfolio/node_modules/@vue/shared/dist/shared.cjs.js';
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///media/ibrahim/D/my-portfolio/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import destr, { destr as destr$1 } from 'file:///media/ibrahim/D/my-portfolio/node_modules/destr/dist/index.mjs';
-import { createHooks } from 'file:///media/ibrahim/D/my-portfolio/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file:///media/ibrahim/D/my-portfolio/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///media/ibrahim/D/my-portfolio/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file:///media/ibrahim/D/my-portfolio/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///media/ibrahim/D/my-portfolio/node_modules/unstorage/drivers/fs.mjs';
-import { digest } from 'file:///media/ibrahim/D/my-portfolio/node_modules/ohash/dist/index.mjs';
-import { klona } from 'file:///media/ibrahim/D/my-portfolio/node_modules/klona/dist/index.mjs';
-import defu, { defuFn, createDefu } from 'file:///media/ibrahim/D/my-portfolio/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file:///media/ibrahim/D/my-portfolio/node_modules/scule/dist/index.mjs';
-import { getContext } from 'file:///media/ibrahim/D/my-portfolio/node_modules/unctx/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file:///media/ibrahim/D/my-portfolio/node_modules/radix3/dist/index.mjs';
+import { escapeHtml } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/@vue/shared/dist/shared.cjs.js';
+import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import destr, { destr as destr$1 } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/destr/dist/index.mjs';
+import { createHooks } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/hookable/dist/index.mjs';
+import { createFetch, Headers as Headers$1 } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/ofetch/dist/node.mjs';
+import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/node-mock-http/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/unstorage/drivers/fs.mjs';
+import { digest } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/ohash/dist/index.mjs';
+import { klona } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/klona/dist/index.mjs';
+import defu, { defuFn, createDefu } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/defu/dist/defu.mjs';
+import { snakeCase } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/scule/dist/index.mjs';
+import { getContext } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/unctx/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
-import consola, { consola as consola$1 } from 'file:///media/ibrahim/D/my-portfolio/node_modules/consola/dist/index.mjs';
-import { ErrorParser } from 'file:///media/ibrahim/D/my-portfolio/node_modules/youch-core/build/index.js';
-import { Youch } from 'file:///media/ibrahim/D/my-portfolio/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file:///media/ibrahim/D/my-portfolio/node_modules/source-map/source-map.js';
+import consola, { consola as consola$1 } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/consola/dist/index.mjs';
+import { ErrorParser } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/youch-core/build/index.js';
+import { Youch } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/youch/build/index.js';
+import { SourceMapConsumer } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/source-map/source-map.js';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { stringify, uneval } from 'file:///media/ibrahim/D/my-portfolio/node_modules/devalue/index.js';
-import { captureRawStackTrace, parseRawStackTrace } from 'file:///media/ibrahim/D/my-portfolio/node_modules/errx/dist/index.js';
-import { isVNode, toValue, isRef } from 'file:///media/ibrahim/D/my-portfolio/node_modules/vue/index.mjs';
-import { createPathIndexLanguageParser, parseAcceptLanguage } from 'file:///media/ibrahim/D/my-portfolio/node_modules/@intlify/utils/dist/index.mjs';
-import { parse } from 'file:///media/ibrahim/D/my-portfolio/node_modules/cookie-es/dist/index.mjs';
-import { createRouterMatcher } from 'file:///media/ibrahim/D/my-portfolio/node_modules/vue-router/vue-router.node.mjs';
+import { stringify, uneval } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/devalue/index.js';
+import { captureRawStackTrace, parseRawStackTrace } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/errx/dist/index.js';
+import { isVNode, toValue, isRef } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/vue/index.mjs';
+import { createPathIndexLanguageParser, parseAcceptLanguage } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/@intlify/utils/dist/index.mjs';
+import { parse } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/cookie-es/dist/index.mjs';
+import { createRouterMatcher } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/vue-router/vue-router.node.mjs';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$1 } from 'file:///media/ibrahim/D/my-portfolio/node_modules/pathe/dist/index.mjs';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///media/ibrahim/D/my-portfolio/node_modules/unhead/dist/server.mjs';
-import { renderToString } from 'file:///media/ibrahim/D/my-portfolio/node_modules/vue/server-renderer/index.mjs';
-import { walkResolver } from 'file:///media/ibrahim/D/my-portfolio/node_modules/unhead/dist/utils.mjs';
+import { dirname as dirname$1, resolve as resolve$1 } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/pathe/dist/index.mjs';
+import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/unhead/dist/server.mjs';
+import { renderToString } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/vue/server-renderer/index.mjs';
+import { walkResolver } from 'file:///media/ibrahim-marwan/D/my-portfolio/node_modules/unhead/dist/utils.mjs';
 
 const HASH_RE = /#/g;
 const AMPERSAND_RE = /&/g;
@@ -287,7 +287,7 @@ function stringifyParsedURL(parsed) {
   return proto + auth + host + pathname + search + hash;
 }
 
-const serverAssets = [{"baseName":"server","dir":"/media/ibrahim/D/my-portfolio/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/media/ibrahim-marwan/D/my-portfolio/server/assets"}];
 
 const assets$1 = createStorage();
 
@@ -299,11 +299,11 @@ const storage$1 = createStorage({});
 
 storage$1.mount('/assets', assets$1);
 
-storage$1.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/media/ibrahim/D/my-portfolio","watchOptions":{"ignored":[null]}}));
-storage$1.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/media/ibrahim/D/my-portfolio/server","watchOptions":{"ignored":[null]}}));
-storage$1.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/media/ibrahim/D/my-portfolio/.nuxt"}));
-storage$1.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/media/ibrahim/D/my-portfolio/.nuxt/cache"}));
-storage$1.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/media/ibrahim/D/my-portfolio/.data/kv"}));
+storage$1.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/media/ibrahim-marwan/D/my-portfolio","watchOptions":{"ignored":[null]}}));
+storage$1.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/media/ibrahim-marwan/D/my-portfolio/server","watchOptions":{"ignored":[null]}}));
+storage$1.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/media/ibrahim-marwan/D/my-portfolio/.nuxt"}));
+storage$1.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/media/ibrahim-marwan/D/my-portfolio/.nuxt/cache"}));
+storage$1.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/media/ibrahim-marwan/D/my-portfolio/.data/kv"}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage$1, base) : storage$1;
@@ -1313,13 +1313,13 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _grS_ISovsNNMvWTMrMdibA7Cjopn8xrGm3OZOSKGJU = (function(nitro) {
+const _YgH9ww0eLGyOb96QOAPh0obO65DD2mDa4FhgzXzC1zE = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script$1}<\/script>`);
   });
 });
 
-const rootDir = "/media/ibrahim/D/my-portfolio";
+const rootDir = "/media/ibrahim-marwan/D/my-portfolio";
 
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=5"},{"charset":"utf-8"},{"name":"description","content":"Professional portfolio of Ibrahim Marwan Ghaybour - Front-End Web Developer with 2+ years of experience specializing in Vue.js, Nuxt.js, Tailwind CSS, and modern web technologies."},{"name":"keywords","content":"Ibrahim Ghaybour, Front-End Developer, Web Developer, Vue.js, Nuxt.js, Tailwind CSS, JavaScript, TypeScript, Portfolio"},{"name":"author","content":"Ibrahim Marwan Ghaybour"},{"property":"og:type","content":"website"},{"property":"og:title","content":"Ibrahim Marwan Ghaybour - Front-End Web Developer"},{"property":"og:description","content":"Professional portfolio showcasing modern web development projects with 2+ years of experience in Vue.js, Nuxt.js, and responsive web applications."},{"property":"og:image","content":"/og-image.svg"},{"property":"og:url","content":"https://your-domain.com"},{"name":"twitter:card","content":"summary_large_image"},{"name":"twitter:title","content":"Ibrahim Marwan Ghaybour - Front-End Web Developer"},{"name":"twitter:description","content":"Professional portfolio showcasing modern web development projects with 2+ years of experience in Vue.js, Nuxt.js, and responsive web applications."},{"name":"twitter:image","content":"/og-image.svg"},{"name":"theme-color","content":"#6366f1"},{"name":"msapplication-TileColor","content":"#6366f1"}],"link":[{"rel":"icon","type":"image/svg+xml","href":"/favicon.svg"},{"rel":"apple-touch-icon","sizes":"180x180","href":"/apple-touch-icon.svg"},{"rel":"canonical","href":"https://your-domain.com"}],"style":[],"script":[],"noscript":[],"viewport":"width=device-width, initial-scale=1, maximum-scale=5","charset":"utf-8","title":"Ibrahim Marwan Ghaybour - Front-End Web Developer"};
 
@@ -1342,7 +1342,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _pZ8EADPz5t45SZYyk61wXRbDIf8amaT4lRlqR8U5Pts = (nitroApp) => {
+const __24GAqSbEaSGnsVnUjKDs465flvtw0OESbIuPtdNBg = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -1771,7 +1771,7 @@ function* detect(detectors, detection, path) {
   }
   yield { locale: detection.fallbackLocale, source: "fallback" };
 }
-const _QJl99eieNNZqZQqRGumqHN1vv9Ip9kJ9M4nt3beEZY = defineNitroPlugin(async (nitro) => {
+const _Htf4HfPt2l6ulbGAkeTBHswfcpggn0KmvS8I1zqvSU = defineNitroPlugin(async (nitro) => {
   const runtimeI18n = useRuntimeI18n();
   const rootRedirect = resolveRootRedirect(runtimeI18n.rootRedirect);
   const _defaultLocale = runtimeI18n.defaultLocale || "";
@@ -1875,17 +1875,17 @@ const _QJl99eieNNZqZQqRGumqHN1vv9Ip9kJ9M4nt3beEZY = defineNitroPlugin(async (nit
 
 const script = "\"use strict\";(()=>{const t=window,e=document.documentElement,c=[\"dark\",\"light\"],n=getStorageValue(\"localStorage\",\"nuxt-color-mode\")||\"system\";let i=n===\"system\"?u():n;const r=e.getAttribute(\"data-color-mode-forced\");r&&(i=r),l(i),t[\"__NUXT_COLOR_MODE__\"]={preference:n,value:i,getColorScheme:u,addColorScheme:l,removeColorScheme:d};function l(o){const s=\"\"+o+\"\",a=\"\";e.classList?e.classList.add(s):e.className+=\" \"+s,a&&e.setAttribute(\"data-\"+a,o)}function d(o){const s=\"\"+o+\"\",a=\"\";e.classList?e.classList.remove(s):e.className=e.className.replace(new RegExp(s,\"g\"),\"\"),a&&e.removeAttribute(\"data-\"+a)}function f(o){return t.matchMedia(\"(prefers-color-scheme\"+o+\")\")}function u(){if(t.matchMedia&&f(\"\").media!==\"not all\"){for(const o of c)if(f(\":\"+o).matches)return o}return\"light\"}})();function getStorageValue(t,e){switch(t){case\"localStorage\":return window.localStorage.getItem(e);case\"sessionStorage\":return window.sessionStorage.getItem(e);case\"cookie\":return getCookie(e);default:return null}}function getCookie(t){const c=(\"; \"+window.document.cookie).split(\"; \"+t+\"=\");if(c.length===2)return c.pop()?.split(\";\").shift()}";
 
-const _lGOXEmXRwhoafEw_cwZN0fjlvYYOuHWI3lDFoxuT4g = (function(nitro) {
+const _6nqCr85EvBkPNzp1rCX72M6TdYwcpbUQpgPgQiVW8fQ = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
 const plugins = [
-  _grS_ISovsNNMvWTMrMdibA7Cjopn8xrGm3OZOSKGJU,
-_pZ8EADPz5t45SZYyk61wXRbDIf8amaT4lRlqR8U5Pts,
-_QJl99eieNNZqZQqRGumqHN1vv9Ip9kJ9M4nt3beEZY,
-_lGOXEmXRwhoafEw_cwZN0fjlvYYOuHWI3lDFoxuT4g
+  _YgH9ww0eLGyOb96QOAPh0obO65DD2mDa4FhgzXzC1zE,
+__24GAqSbEaSGnsVnUjKDs465flvtw0OESbIuPtdNBg,
+_Htf4HfPt2l6ulbGAkeTBHswfcpggn0KmvS8I1zqvSU,
+_6nqCr85EvBkPNzp1rCX72M6TdYwcpbUQpgPgQiVW8fQ
 ];
 
 const assets = {};
@@ -1913,7 +1913,7 @@ function getAsset (id) {
 
 const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
 const EncodingMap = { gzip: ".gz", br: ".br" };
-const _stjw6V = eventHandler((event) => {
+const _VXg3H9 = eventHandler((event) => {
   if (event.method && !METHODS.has(event.method)) {
     return;
   }
@@ -2089,7 +2089,7 @@ defineCachedEventHandler(_cachedMessageLoader, {
   swr: false,
   getKey: (event) => [getRouterParam(event, "locale") ?? "null", getRouterParam(event, "hash") ?? "null"].join("-")
 });
-const _rmAYld = _messagesHandler ;
+const _QVrVKz = _messagesHandler ;
 
 const VueResolver = (_, value) => {
   return isRef(value) ? toValue(value) : value;
@@ -2163,8 +2163,8 @@ function publicAssetsURL(...path) {
 
 const APP_ROOT_OPEN_TAG = `<${appRootTag}${propsToString(appRootAttrs)}>`;
 const APP_ROOT_CLOSE_TAG = `</${appRootTag}>`;
-const getServerEntry = () => import('file:///media/ibrahim/D/my-portfolio/.nuxt//dist/server/server.mjs').then((r) => r.default || r);
-const getClientManifest = () => import('file:///media/ibrahim/D/my-portfolio/.nuxt//dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file:///media/ibrahim-marwan/D/my-portfolio/.nuxt//dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file:///media/ibrahim-marwan/D/my-portfolio/.nuxt//dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 const getSSRRenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
   if (!manifest) {
@@ -2415,14 +2415,14 @@ async function getIslandContext(event) {
   return ctx;
 }
 
-const _lazy_UyVvgR = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_ydNQgV = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '', handler: _stjw6V, lazy: false, middleware: true, method: undefined },
-  { route: '/__nuxt_error', handler: _lazy_UyVvgR, lazy: true, middleware: false, method: undefined },
-  { route: '/_i18n/:hash/:locale/messages.json', handler: _rmAYld, lazy: false, middleware: false, method: undefined },
+  { route: '', handler: _VXg3H9, lazy: false, middleware: true, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_ydNQgV, lazy: true, middleware: false, method: undefined },
+  { route: '/_i18n/:hash/:locale/messages.json', handler: _QVrVKz, lazy: false, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_UyVvgR, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_ydNQgV, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {

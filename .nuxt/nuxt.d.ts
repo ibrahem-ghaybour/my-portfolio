@@ -1,5 +1,5 @@
-/// <reference types="shadcn-nuxt" />
 /// <reference types="@nuxtjs/i18n" />
+/// <reference types="shadcn-nuxt" />
 /// <reference types="@nuxt/devtools" />
 /// <reference types="@nuxtjs/color-mode" />
 /// <reference types="@nuxt/telemetry" />

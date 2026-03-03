@@ -46,15 +46,15 @@
         <!-- Stats -->
         <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-8">
           <div ref="stat1" class="text-center p-3 sm:p-4 rounded-lg bg-muted/50">
-            <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">2+</div>
+            <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">3+</div>
             <div class="text-xs sm:text-sm text-muted-foreground">{{ t('about.experience') }}</div>
           </div>
           <div ref="stat2" class="text-center p-3 sm:p-4 rounded-lg bg-muted/50">
-            <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">15+</div>
+            <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">10+</div>
             <div class="text-xs sm:text-sm text-muted-foreground">{{ t('about.projects') }}</div>
           </div>
           <div ref="stat3" class="text-center p-3 sm:p-4 rounded-lg bg-muted/50">
-            <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">10+</div>
+            <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">5+</div>
             <div class="text-xs sm:text-sm text-muted-foreground">{{ t('about.clients') }}</div>
           </div>
         </div>
@@ -94,6 +94,61 @@
               </div>
             </div>
           </div>
+
+          <!-- 2026 Projects -->
+          <div class="space-y-4 pt-6">
+            <h3 class="text-2xl font-semibold text-foreground mb-4">{{ locale === 'ar' ? 'مشاريع ٢٠٢٦' : '2026 Projects' }}</h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Project 1 - E-commerce -->
+              <div class="group relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src="/images/pro2_2026.png" 
+                    alt="E-commerce Next.js Website"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div class="p-4">
+                  <h4 class="font-semibold text-foreground mb-2">{{ locale === 'ar' ? 'متجر إلكتروني - نوكست فور' : 'E-commerce - Next.js' }}</h4>
+                  <p class="text-sm text-muted-foreground mb-3">{{ locale === 'ar' ? 'موقع تجارة إلكترونية متكامل مبني بتقنية نوكست فور' : 'Complete e-commerce website built with Next.js' }}</p>
+                  <a 
+                    href="https://e-nuxt.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+                  >
+                    {{ locale === 'ar' ? 'عرض المشروع' : 'View Project' }}
+                    <ArrowRight class="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Project 2 - POS System -->
+              <div class="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src="/images/pro2026.png" 
+                    alt="POS System Online/Offline"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div class="p-4">
+                  <h4 class="font-semibold text-foreground mb-2">{{ locale === 'ar' ? 'نظام نقاط البيع أونلاين/أوفلاين' : 'POS System Online/Offline' }}</h4>
+                  <p class="text-sm text-muted-foreground mb-3">{{ locale === 'ar' ? 'نظام POS يعمل أونلاين وأوفلاين مع الاتصال بالطابعات عبر USB والإنترنت' : 'POS system working online and offline with printer connectivity via USB and internet' }}</p>
+                  <a 
+                    href="https://pos-app-virid.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-purple-600 hover:text-purple-500 transition-colors text-sm font-medium"
+                  >
+                    {{ locale === 'ar' ? 'عرض المشروع' : 'View Project' }}
+                    <ArrowRight class="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -104,10 +159,10 @@
 import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { gsap } from 'gsap'
-import { Code2, Briefcase } from 'lucide-vue-next'
+import { Code2, Briefcase, ArrowRight } from 'lucide-vue-next'
 import Section3DObject from '~/components/Section3DObject.vue'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 const sectionTitle = ref<HTMLElement | null>(null)
 const profileImage = ref<HTMLElement | null>(null)
@@ -179,9 +234,9 @@ onMounted(() => {
   }
 
   setTimeout(() => {
-    animateCounter(stat1.value, 2, 0.8)
-    animateCounter(stat2.value, 15, 1)
-    animateCounter(stat3.value, 10, 1.2)
+    animateCounter(stat1.value, 3, 0.8)
+    animateCounter(stat2.value, 10, 1)
+    animateCounter(stat3.value, 5, 1.2)
   }, 200)
 })
 </script>
