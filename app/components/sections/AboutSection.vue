@@ -234,7 +234,7 @@ onMounted(() => {
   }
 
   setTimeout(() => {
-    animateCounter(stat1.value, 3, 0.8)
+    animateCounter(stat1.value, 2, 0.8)
     animateCounter(stat2.value, 10, 1)
     animateCounter(stat3.value, 5, 1.2)
   }, 200)
